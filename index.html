@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="quoteBook">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <title></title>
+  </head>
+  <body ng-controller="MainController">
+
+    <header>
+      <section class="header-container">
+        <h1>QUOTE BOOK</h1>
+        <input type="text" ng-model="quoteFilter" placeholder="Filter"/>
+      </section>
+    </header>
+
+    <main>
+      <!-- QUOTES -->
+      <section id="newquote-container">
+        <textarea name="name" rows="8" cols="40" placeholder="Add a quote. Limit to 140 characters." ng-model="quoteText"></textarea>
+        <input type="text" placeholder="Author" ng-model="quoteAuthor"/>
+        <div id="submitform">
+          <button ng-click="addQuote(quoteText, quoteAuthor)" ng-model="isDisabled">Submit Quote</button>
+          <p ng-if="quoteText.length <= 140">{{ 140 - quoteText.length }}</p>
+          <p ng-if="quoteText.length > 140 && quoteText.length <= 340">You've gone over by {{ quoteText.length - 140 }} characters!</p>
+          <p ng-if="quoteText.length > 340">Ease up, bro!</p>
+        </div>
+      </section>
+
+      <section id="quotes-container">
+        <div class="quote" ng-repeat="quote in quotes | filter: quoteFilter">
+          <div class="button-container">
+            <button class="quote-button" ng-click="removeQuote(quote.author)">X Remove</button>
+          </div>
+          <div class="quote-container">
+            <div class="quotetext">
+              "{{ quote.text }}"
+            </div>
+            <div class="quoteauthor">
+              by <span>{{ quote.author }}</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+      </footer>
+
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/mainCtrl.js" charset="utf-8"></script>
+    <script src="js/dataService.js" charset="utf-8"></script>
+  </body>
+</html>

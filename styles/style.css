@@ -1,0 +1,180 @@
+@import url(https://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700|Lora:400,700|Open+Sans:300,400);
+
+body {
+  background: hsl(45, 100%, 85%);
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: hsla(0, 0%, 0%, 0.95);
+  color: #fff;
+  z-index: 5;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-family: 'Lora', serif;
+  font-weight: 700;
+}
+
+.header-container input {
+  padding: 5px 10px;
+  height: 2em;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid hsla(45, 100%, 45%, 1);
+  background: hsla(45, 100%, 100%, 0.1);
+  outline: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  color: #fff;
+  text-align: right;
+}
+
+main {
+  width: 90%;
+  margin: 140px auto 0;
+  position: relative;
+}
+/* END HEADER */
+
+/* ADD QUOTES */
+#newquote-container {
+  width: 25%;
+  position: fixed;
+}
+
+#newquote-container > textarea, #newquote-container > input {
+  background: hsl(45, 100%, 95%);
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  resize: none;
+  outline-color: hsla(45, 100%, 45%, 1);
+  padding: 10px;
+  font-family: "Lora", serif;
+  margin-bottom: 10px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#submitform {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
+}
+
+#submitform p {
+  margin: 0;
+}
+
+#submitform button {
+  height: 40px;
+  padding: 5px 10px;
+  border: 1px solid hsla(45, 100%, 45%, 1);
+  border-radius: 5px;
+  background: hsla(45, 100%, 45%, 1);
+  color: hsl(45, 100%, 85%);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+#submitform button:disabled {
+  border: 1px solid hsla(45, 100%, 50%, 0.5);
+  border-radius: 5px;
+  background: transparent;
+  color: hsla(45, 100%, 50%, 0.5);
+  box-shadow: none;
+}
+/* END ADD QUOTES */
+
+/* MAIN QUOTES */
+#quotes-container {
+  width: 70%;
+  float: right;
+}
+
+.quote {
+  background-color: hsl(45, 100%, 95%);
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quote-overlay {
+  background: transparent;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  border-radius: 5px;
+  top: 0;
+  left: 0;
+}
+
+.quote-container {
+  width: 85%;
+}
+
+.quotetext {
+  margin: 40px 20px 20px;
+  font-family: 'Vollkorn', serif;
+  font-size: 2rem;
+  text-align: right;
+}
+
+.quoteauthor {
+  font-family: 'Vollkorn', serif;
+  font-size: 1rem;
+  text-align: right;
+  margin: 0 20px 40px;
+}
+
+.quoteauthor span {
+  color: hsla(45, 100%, 45%, 1);
+}
+
+.button-container {
+  width: 15%;
+}
+
+.quote-button {
+  align-self: flex-start;
+  padding: 10px;
+  margin: 40px 0 0 40px;
+  font-family: 'Open Sans', sans-serif;
+  border: 1px solid hsla(45, 100%, 45%, .3);
+  border-radius: 5px;
+  background: transparent;
+  font-size: 15px;
+  text-align: left;
+  color: hsla(45, 100%, 45%, .3);
+}
+
+.quote-button:hover {
+  color: hsl(45, 100%, 95%);
+  border-color: hsla(45, 100%, 45%, 0);
+  background: hsla(45, 100%, 45%, 1);
+}
+/* END MAIN QUOTES */
