@@ -21,7 +21,7 @@
         <textarea name="name" rows="8" cols="40" placeholder="Add a quote. Limit to 140 characters." ng-model="quoteText"></textarea>
         <input type="text" placeholder="Author" ng-model="quoteAuthor"/>
         <div id="submitform">
-          <button ng-click="addQuote(quoteText, quoteAuthor)" ng-model="isDisabled">Submit Quote</button>
+          <button ng-click="addQuote(quoteText, quoteAuthor)">Submit Quote</button>
           <p ng-if="quoteText.length <= 140">{{ 140 - quoteText.length }}</p>
           <p ng-if="quoteText.length > 140 && quoteText.length <= 340">You've gone over by {{ quoteText.length - 140 }} characters!</p>
           <p ng-if="quoteText.length > 340">Ease up, bro!</p>
@@ -42,6 +42,7 @@
             </div>
           </div>
         </div>
+
       </section>
 
       <footer>

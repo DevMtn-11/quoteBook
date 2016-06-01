@@ -122,17 +122,6 @@ main {
   justify-content: space-between;
 }
 
-.quote-overlay {
-  background: transparent;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  border-radius: 5px;
-  top: 0;
-  left: 0;
-}
-
 .quote-container {
   width: 85%;
 }
@@ -170,6 +159,7 @@ main {
   font-size: 15px;
   text-align: left;
   color: hsla(45, 100%, 45%, .3);
+  z-index: 5;
 }
 
 .quote-button:hover {
@@ -178,3 +168,8 @@ main {
   background: hsla(45, 100%, 45%, 1);
 }
 /* END MAIN QUOTES */
+
+
+.overlay {
+
+}

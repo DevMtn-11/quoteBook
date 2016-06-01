@@ -12,6 +12,15 @@ angular.module('quoteBook')
       return dataService.addQuote(quoteText, quoteAuthor);
     };
 
+    $scope.disable = function() {
+      if($scope.quoteText && $scope.quoteAuthor) {
+        $scope.disable = false;
+      }
+      else {
+        $scope.disable = true;
+      }
+    };
+
     $scope.removeQuote = dataService.removeQuote;
 
   });
